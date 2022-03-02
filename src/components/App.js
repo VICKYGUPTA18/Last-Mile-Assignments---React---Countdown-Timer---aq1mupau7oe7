@@ -7,9 +7,11 @@ const App = () => {
     if (e.keyCode === 13) {
       if (isNaN(e.target.value)) {
         setCount(0);
+        return;
       }
       setCount(parseInt(e.target.value));
     }
+    return;
   };
   useEffect(() => {
     if (count > 0) {

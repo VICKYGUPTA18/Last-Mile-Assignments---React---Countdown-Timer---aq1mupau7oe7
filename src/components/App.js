@@ -5,8 +5,13 @@ const App = () => {
   const [count, setCount] = useState(0);
   const handlekeyDown = (e) => {
     if (e.keyCode === 13) {
+      if (isNaN(e.target.value)) {
+        setCount(0);
+        return;
+      }
       setCount(e.target.value);
     }
+    return;
   };
   useEffect(() => {
     if (count > 0) {
